@@ -1,3 +1,3 @@
 # OCR-COMPUTER-VISION
 
-#Run project node index.js
+#Run project: node index.js
