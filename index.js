@@ -48,14 +48,10 @@ axios.request(options).then(function (response) {
                     //boundingBox sub hijos
                     var subChild = obtenerBbox(words.boundingBox)
                     for(var j in words.words){
-                        if(bboxPadre == subChild[0] || 
-                            (bboxPadre == parseInt(subChild[0]) - 1) ||
-                            (bboxPadre == parseInt(subChild[0]) - 2) ||
-                            (bboxPadre == parseInt(subChild[0]) + aproxa1) || 
-                            (bboxPadre == parseInt(subChild[0]) + aproxa2) || 
-                            (bboxPadre == parseInt(subChild[0]) + aproxa3) ||
-                            (bboxPadre == parseInt(subChild[0]) + aproxa4) ||
-                            (bboxPadre == parseInt(subChild[0]) + aproxa5)){
+                        if(bboxPadre == subChild[0] ||  (bboxPadre == parseInt(subChild[0]) - 1) || 
+                            (bboxPadre == parseInt(subChild[0]) - 2) || (bboxPadre == parseInt(subChild[0]) + aproxa1) || 
+                            (bboxPadre == parseInt(subChild[0]) + aproxa2) || (bboxPadre == parseInt(subChild[0]) + aproxa3) || 
+                            (bboxPadre == parseInt(subChild[0]) + aproxa4) || (bboxPadre == parseInt(subChild[0]) + aproxa5)){
                             //se obtiene la linea de texto que hace match con el padre
                             if(words.words[j].text != undefined || words.words[j].text != null){
                                 cadena = cadena + ' ' + words.words[j].text
@@ -69,14 +65,10 @@ axios.request(options).then(function (response) {
                     $(lines.lines).each(function(o, words){    
                         for(var j in words.words){
                             var newBoundingChild = obtenerBbox(words.words[j].boundingBox)
-                            if(newBoundingChild == subChild[0] || 
-                                newBoundingChild == (parseInt(subChild[0]) - 1) ||
-                                newBoundingChild == (parseInt(subChild[0]) - 2) ||
-                                newBoundingChild == (parseInt(subChild[0])+ aproxa1) || 
-                                newBoundingChild == (parseInt(subChild[0])+ aproxa2) || 
-                                newBoundingChild == (parseInt(subChild[0])+ aproxa3) || 
-                                newBoundingChild == (parseInt(subChild[0])+ aproxa4) || 
-                                newBoundingChild == (parseInt(subChild[0])+ aproxa5)){
+                            if(newBoundingChild == subChild[0] ||  newBoundingChild == (parseInt(subChild[0]) - 1) || 
+                                newBoundingChild == (parseInt(subChild[0]) - 2) || newBoundingChild == (parseInt(subChild[0])+ aproxa1) || 
+                                newBoundingChild == (parseInt(subChild[0])+ aproxa2) || newBoundingChild == (parseInt(subChild[0])+ aproxa3) || 
+                                newBoundingChild == (parseInt(subChild[0])+ aproxa4) ||  newBoundingChild == (parseInt(subChild[0])+ aproxa5)){
                                 //se obtiene la linea de texto que hace match con el hijo
                                 if(words.words[j].text != undefined || words.words[j].text != null){
                                     cadena = cadena + ' ' + words.words[j].text
@@ -92,7 +84,6 @@ axios.request(options).then(function (response) {
             }
         })
     })
-
     console.log(cadena)
 })
 
@@ -111,4 +102,3 @@ function removeValues(jsonObj, keySkip) {
         }
     })    
 }
-
