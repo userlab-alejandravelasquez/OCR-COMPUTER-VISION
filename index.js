@@ -14,7 +14,7 @@ const options = {
       'x-rapidapi-host': 'microsoft-computer-vision3.p.rapidapi.com'
     },
     data: {
-      url: 'https://4.bp.blogspot.com/-PE1qiV_sIPc/UTOVBPcZMoI/AAAAAAAAAco/YM1njR0cvoo/s1600/ticket.jpg'
+      url: 'https://s3.amazonaws.com/moocho-receipts/JPEG_20201228_155643_C94693A6-3D63-4531-A0FD-3CA39AA9A0B5.jpg'
     }
 }
 
@@ -63,7 +63,10 @@ axios.request(options).then(function (response) {
                     var subChild = obtenerBbox(words.boundingBox)
                     for(var j in words.words){
                         if(bboxPadre == subChild[0] ||  (bboxPadre == parseInt(subChild[0]) - 1) || 
-                            (bboxPadre == parseInt(subChild[0]) - 2) || (bboxPadre == parseInt(subChild[0]) + aproxa1) || 
+                            (bboxPadre == parseInt(subChild[0]) - 2) || (bboxPadre == parseInt(subChild[0]) - 3) ||
+                            (bboxPadre == parseInt(subChild[0]) - 4) || (bboxPadre == parseInt(subChild[0]) - 5) ||
+                            (bboxPadre == parseInt(subChild[0]) - 6) || (bboxPadre == parseInt(subChild[0]) - 7) ||
+                            (bboxPadre == parseInt(subChild[0]) + aproxa1) || 
                             (bboxPadre == parseInt(subChild[0]) + aproxa2) || (bboxPadre == parseInt(subChild[0]) + aproxa3) || 
                             (bboxPadre == parseInt(subChild[0]) + aproxa4) || (bboxPadre == parseInt(subChild[0]) + aproxa5)){
                             //se obtiene la linea de texto que hace match con el padre
@@ -79,8 +82,11 @@ axios.request(options).then(function (response) {
                     $(lines.lines).each(function(o, words){    
                         for(var j in words.words){
                             var newBoundingChild = obtenerBbox(words.words[j].boundingBox)
-                            if(newBoundingChild == subChild[0] ||  newBoundingChild == (parseInt(subChild[0]) - 1) || 
-                                newBoundingChild == (parseInt(subChild[0]) - 2) || newBoundingChild == (parseInt(subChild[0])+ aproxa1) || 
+                            if(newBoundingChild == subChild[0] || newBoundingChild == (parseInt(subChild[0]) - 1) || 
+                                newBoundingChild == (parseInt(subChild[0]) - 2) || newBoundingChild == (parseInt(subChild[0]) - 3) ||  
+                                newBoundingChild == (parseInt(subChild[0]) - 4) ||  newBoundingChild == (parseInt(subChild[0]) - 5) ||
+                                newBoundingChild == (parseInt(subChild[0]) - 6) ||  newBoundingChild == (parseInt(subChild[0]) - 7) ||   
+                                newBoundingChild == (parseInt(subChild[0])+ aproxa1) || 
                                 newBoundingChild == (parseInt(subChild[0])+ aproxa2) || newBoundingChild == (parseInt(subChild[0])+ aproxa3) || 
                                 newBoundingChild == (parseInt(subChild[0])+ aproxa4) ||  newBoundingChild == (parseInt(subChild[0])+ aproxa5)){
                                 //se obtiene la linea de texto que hace match con el hijo
