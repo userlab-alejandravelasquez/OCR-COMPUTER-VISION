@@ -14,7 +14,7 @@ const options = {
       'x-rapidapi-host': 'microsoft-computer-vision3.p.rapidapi.com'
     },
     data: {
-      url: 'https://s3.amazonaws.com/moocho-receipts/JPEG_20210108_204733_900FECE9-E0E0-4E4E-8714-E3913A052226.jpg'
+      url: 'https://4.bp.blogspot.com/-PE1qiV_sIPc/UTOVBPcZMoI/AAAAAAAAAco/YM1njR0cvoo/s1600/ticket.jpg'
     }
 }
 
@@ -92,7 +92,6 @@ axios.request(options).then(function (response) {
                         }
                     })
                 })
-
             })
                 subChild = []
             }
