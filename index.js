@@ -21,7 +21,7 @@ const options = {
 axios.request(options).then(function (response) {
     var boundingPadre = []
     var sPadre = []
-    var textAngle = response.data.textAngle
+    var textAngle = Math.round(response.data.textAngle)
     var dataOCR = response.data.regions
 
     $(dataOCR).each(function(key, value){
@@ -34,11 +34,25 @@ axios.request(options).then(function (response) {
     // recorrer padres
     $(sPadre).each(function(key, value){
         var bboxPadre = value
-        var aproxa1 =  textAngle > 0 ? textAngle : 1
-        var aproxa2 =  textAngle > 0 ? textAngle : 2
-        var aproxa3 =  textAngle > 0 ? textAngle : 3
-        var aproxa4 =  textAngle > 0 ? textAngle : 4
-        var aproxa5 =  textAngle > 0 ? textAngle : 5    
+        var aproxa1 = 0
+        var aproxa2 = 0
+        var aproxa3 = 0
+        var aproxa4 = 0
+        var aproxa5 = 0
+
+        if(textAngle == 0){
+            aproxa1 = 1
+            aproxa2 = 2
+            aproxa3 = 3
+            aproxa4 = 4
+            aproxa5 = 5    
+        }else{
+            aproxa1 = textAngle
+            aproxa2 = textAngle + 1
+            aproxa3 = textAngle + 2
+            aproxa4 = textAngle + 3
+        }
+
         $(dataOCR).each(function(key, lines){
             //obtener el hijo y comparar si es igual al valor padre para entrar y comparar dentro del objeto hijo
             var yHijo = obtenerBbox(lines.boundingBox)
@@ -102,3 +116,4 @@ function removeValues(jsonObj, keySkip) {
         }
     })    
 }
+
