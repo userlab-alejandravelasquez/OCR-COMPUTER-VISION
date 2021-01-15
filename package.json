@@ -1,0 +1,18 @@
+{
+  "name": "ocr-microsoft",
+  "version": "1.0.0",
+  "description": "test ocr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "express": "^4.15.3",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "traverse": "^0.6.6"
+  },
+  "author": "alejandra",
+  "license": "ISC"
+}
